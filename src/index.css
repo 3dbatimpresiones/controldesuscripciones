@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'system-ui', sans-serif;
+
+  --color-superficie: #0f0f10;
+  --color-fondo: #141416;
+  --color-tarjeta: #1a1a1d;
+  --color-tarjeta-hover: #1e1e22;
+  --color-borde: #2a2a2f;
+  --color-borde-suave: #222226;
+
+  --color-texto: #e8e8ed;
+  --color-texto-secundario: #8b8b97;
+  --color-texto-tenue: #4a4a55;
+
+  --color-acento: #7c6af7;
+  --color-acento-hover: #6b59e8;
+  --color-acento-suave: rgba(124, 106, 247, 0.12);
+  --color-acento-borde: rgba(124, 106, 247, 0.3);
+
+  --color-exito: #22c55e;
+  --color-exito-suave: rgba(34, 197, 94, 0.12);
+  --color-advertencia: #f59e0b;
+  --color-advertencia-suave: rgba(245, 158, 11, 0.12);
+  --color-peligro: #ef4444;
+  --color-peligro-suave: rgba(239, 68, 68, 0.12);
+  --color-info: #3b82f6;
+  --color-info-suave: rgba(59, 130, 246, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #141416;
+  color: #e8e8ed;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a45;
+}
+
+/* Transiciones suaves globales */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Selección de texto */
+::selection {
+  background: rgba(124, 106, 247, 0.3);
+  color: #e8e8ed;
+}
+
+/* Focus visible accesible */
+:focus-visible {
+  outline: 2px solid #7c6af7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Animaciones personalizadas */
+@keyframes entrada-suave {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulso-suave {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes giro {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animar-entrada {
+  animation: entrada-suave 0.2s ease-out;
+}
+
+.animar-pulso {
+  animation: pulso-suave 2s ease-in-out infinite;
+}
+
+.animar-giro {
+  animation: giro 1s linear infinite;
+}

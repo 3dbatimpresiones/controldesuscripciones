@@ -1,0 +1,5 @@
+export * from './calculos'
+export * from './fechas'
+export * from './seguridad'
+export * from './formato'
+export { obtenerCategoria, CATEGORIAS, MAPA_CATEGORIAS } from '@/configuracion/categorias'
